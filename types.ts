@@ -325,3 +325,11 @@ export const ALL_SKILLS_LIST: string[] = [
     "Nature", "Perception", "Performance", "Persuasion", "Religion", 
     "Sleight of Hand", "Stealth", "Survival"
 ];
+
+export interface GameMechanic {
+  id: string; // Unique identifier for the mechanic
+  name: string; // Display name of the mechanic
+  description: string; // Detailed description
+  type: 'skill' | 'dice' | 'ability' | 'status_effect' | 'other'; // Type of mechanic
+  properties?: Record<string, any>; // Optional field for additional properties
+}
