@@ -1,0 +1,47 @@
+{
+  "id": "generic-origin",
+  "name": "Generic Origin",
+  "description": "A background story or upbringing that shapes the character. This describes the Generic Origin.",
+  "asi": {
+    "options": [
+      {
+        "name": "Standard Increase",
+        "abilities": [
+          { "score": "Charisma", "bonus": 2 },
+          { "score": "Wisdom", "bonus": 1 }
+        ]
+      },
+      {
+        "name": "Flexible Increase",
+        "abilities": [
+          { "score": "Any", "bonus": 1 },
+          { "score": "Any", "bonus": 1 }
+        ],
+        "count": 2
+      }
+    ],
+    "note": "Typically, an origin offers a choice of ability score increases."
+  },
+  "skillProficiencies": ["Persuasion", "Insight"],
+  "skillProficiencyChoices": {
+    "choose": 1,
+    "from": ["History", "Arcana", "Deception"]
+  },
+  "toolProficiencies": ["Artisan's Tools (Type)"],
+  "toolProficiencyChoices": {
+    "choose": 0,
+    "from": []
+  },
+  "languageProficiencies": [],
+  "languageProficiencyChoices": {
+    "choose": 1,
+    "from": ["Elvish", "Dwarvish", "Infernal"]
+  },
+  "originFeat": "Name of a specific feat granted by this origin (e.g., Magic Initiate, Tough)",
+  "narrativeHook": "A compelling story element or personal quest starter related to this origin.",
+  "startingEquipment": [
+    "A set of common clothes",
+    "A trinket from your past",
+    "10 gp"
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "name": "Generic Tooltip Name",
+  "category": "General Terms",
+  "summary": "A concise summary of the term or mechanic this tooltip defines. This appears on hover or initial view.",
+  "level": "N/A",
+  "castingTime": "N/A",
+  "range": "N/A",
+  "area": "N/A",
+  "components": ["V", "S", "M (a specific item)"],
+  "duration": "Instantaneous / 1 minute / Concentration, up to 1 hour",
+  "school": "Evocation / Abjuration / etc. (for spells)",
+  "damage": [
+    {
+      "dice": "1d6",
+      "type": "Fire",
+      "notes": "Extra damage on critical hit."
+    }
+  ],
+  "healing": "2d8+WIS",
+  "saveInfo": {
+    "attribute": "Dexterity",
+    "dc": "Spell Save DC / 15",
+    "effectOnSuccess": "Half damage",
+    "effectOnFailure": "Full damage and condition"
+  },
+  "effects": [
+    "Pushes the target 10ft away.",
+    "Grants advantage on next attack roll."
+  ],
+  "conditionsApplied": ["Blinded", "Prone"],
+  "recharge": "Recharge 5-6 / Short or Long Rest",
+  "prerequisites": "Must be level 5 / Specific class or feature",
+  "source": "Player's Handbook, p. X / Specific Class Feature",
+  "tags": ["Combat", "Utility", "Healing", "Control"],
+  "governingAbility": "Strength / Intelligence (for skill checks or save DCs)",
+  "rules": [
+    "Specific rule interaction 1.",
+    "Clarification on usage or timing."
+  ],
+  "numericalValue": "10 (e.g., for AC calculation, flat bonus)",
+  "additionalDetails": {
+    "exampleKey1": "Further details or context-specific information.",
+    "exampleKey2": "Another piece of relevant info."
+  }
+}

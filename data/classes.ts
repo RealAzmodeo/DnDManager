@@ -1,7 +1,11 @@
-
 import { ClassDefinition } from '../types';
 
-export const barbarianClassData: ClassDefinition = {
+export interface AllClassesData {
+  [classNameKey: string]: ClassDefinition;
+}
+
+export const allClassesData: AllClassesData = {
+  barbarian: {
   className: "Barbarian",
   classTitle: "",
   classDescription: "",
@@ -251,4 +255,6 @@ export const barbarianClassData: ClassDefinition = {
       ]
     }
   }
+},
+  // Other classes will be added here later
 };

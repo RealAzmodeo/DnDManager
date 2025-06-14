@@ -1,0 +1,31 @@
+{
+  "id": "generic-species",
+  "name": "Generic Species",
+  "description": "A detailed description of the Generic Species, its appearance, typical traits, and place in the world.",
+  "asi": [
+    {
+      "score": "Strength",
+      "bonus": 2
+    },
+    {
+      "score": "Any",
+      "bonus": 1,
+      "count": 1
+    }
+  ],
+  "speed": 30,
+  "size": "Medium",
+  "vision": "Normal vision. Some species might have Darkvision (e.g., 'Darkvision 60ft').",
+  "traits": [
+    {
+      "name": "Species Trait Alpha",
+      "description": "Description of what Trait Alpha does."
+    },
+    {
+      "name": "Species Trait Beta",
+      "description": "Description of what Trait Beta does. This might involve choices or sub-options."
+    }
+  ],
+  "languagesKnown": ["Common", "SpeciesLanguage"],
+  "languageChoices": 0
+}

@@ -1,19 +1,6 @@
-
 import { AllClassesData, Subclass, ClassSection, ClassDefinition } from './types';
-import { gunslingerClassData } from './data/gunslinger';
-import { psionClassData } from './data/psion';
-import { clericClassData } from './data/cleric';
-import { wizardClassData } from './data/wizard';
-import { paladinClassData } from './data/paladin';
-import { fighterClassData } from './data/fighter';
-import { bardClassData } from './data/bard';
-import { rogueClassData } from './data/rogue';
-import { barbarianClassData } from './data/barbarian';
-import { druidClassData } from './data/druid';
-import { monkClassData } from './data/monk';
-import { sorcererClassData } from './data/sorcerer';
-import { rangerClassData } from './data/ranger';
-import { warlockClassData } from './data/warlock'; 
+import { allClassesData as rawAllClassesData } from './data/classes'; // Added new import
+// Removed 14 individual class data imports
 
 import { ALL_SPECIES_DATA } from './data/speciesData';
 import { ALL_ORIGINS_DATA } from './data/originsData';
@@ -43,22 +30,13 @@ const ensureSubclassIds = (classDef: ClassDefinition): ClassDefinition => {
   return classDef;
 };
 
-export const ALL_CLASSES_DATA: AllClassesData = {
-  "gunslinger": ensureSubclassIds(gunslingerClassData),
-  "psion": ensureSubclassIds(psionClassData),
-  "cleric": ensureSubclassIds(clericClassData),
-  "wizard": ensureSubclassIds(wizardClassData),
-  "paladin": ensureSubclassIds(paladinClassData),
-  "fighter": ensureSubclassIds(fighterClassData),
-  "bard": ensureSubclassIds(bardClassData),
-  "rogue": ensureSubclassIds(rogueClassData),
-  "barbarian": ensureSubclassIds(barbarianClassData),
-  "druid": ensureSubclassIds(druidClassData),
-  "monk": ensureSubclassIds(monkClassData),
-  "sorcerer": ensureSubclassIds(sorcererClassData),
-  "ranger": ensureSubclassIds(rangerClassData),
-  "warlock": ensureSubclassIds(warlockClassData),
-};
+// Modified ALL_CLASSES_DATA initialization
+export const ALL_CLASSES_DATA: AllClassesData = Object.entries(
+  rawAllClassesData
+).reduce<AllClassesData>((acc, [key, classDef]) => {
+  acc[key] = ensureSubclassIds(classDef);
+  return acc;
+}, {});
 
 export const getSubclassesForClass = (classKey: string): Subclass[] => {
   const classData = ALL_CLASSES_DATA[classKey];
