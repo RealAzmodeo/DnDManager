@@ -1,0 +1,44 @@
+{
+  "id": "generic-spell-id",
+  "name": "Generic Spell Name",
+  "level": 1,
+  "school": "Evocation",
+  "castingTime": "1 Action",
+  "range": "30 feet",
+  "area": "5-foot sphere",
+  "components": {
+    "verbal": true,
+    "somatic": true,
+    "material": true,
+    "materialDescription": "A pinch of sulfur and bat guano."
+  },
+  "duration": {
+    "value": 1,
+    "unit": "minute",
+    "concentration": true
+  },
+  "description": "A detailed description of what the spell does, its effects, and any conditions.",
+  "higherLevelCasting": "When you cast this spell using a spell slot of 2nd level or higher, the damage increases by 1d8 for each slot level above 1st.",
+  "damage": [
+    {
+      "dice": "2d8",
+      "type": "Thunder",
+      "notes": "On a failed save."
+    }
+  ],
+  "healing": null,
+  "saveInfo": {
+    "attribute": "Constitution",
+    "dcCalculation": "SpellSaveDC",
+    "effectOnSuccess": "Half damage",
+    "effectOnFailure": "Full damage and pushed 10 feet"
+  },
+  "effects": [
+    "Creates a loud boom audible up to 100 feet."
+  ],
+  "conditionsApplied": ["Deafened (on failure)"],
+  "ritual": false,
+  "source": "Player's Handbook, p. XYZ",
+  "tags": ["Combat", "Control", "AoE"],
+  "notes": "Optional notes about specific interactions or edge cases."
+}
