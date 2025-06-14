@@ -1,0 +1,18 @@
+{
+  "id": "generic-mechanic-id",
+  "name": "Generic Game Mechanic Name",
+  "description": "Detailed description of what this game mechanic represents and how it works.",
+  "type": "other",
+  "properties": {
+    "exampleProperty1": "exampleValue1",
+    "exampleProperty2": true,
+    "exampleProperty3": 123,
+    "notes": [
+      "This 'properties' field is flexible and its structure depends on the 'type' of mechanic.",
+      "For 'type': 'skill', properties might include: 'abilityScore': 'Dexterity', 'relatedActions': ['Hide', 'Move Silently'].",
+      "For 'type': 'dice', properties might include: 'notation': '2d6+MOD', 'modStat': 'Strength', 'damageType': 'Slashing'.",
+      "For 'type': 'status_effect', properties might include: 'durationTurns': '1d4', 'effects': ['-2 to Attack Rolls', 'Cannot take reactions'].",
+      "For 'type': 'ability', properties might include: 'actionType': 'Action', 'range': '30ft', 'targets': '1 creature'."
+    ]
+  }
+}

@@ -1,0 +1,275 @@
+{
+  "className": "Generic ClassName",
+  "classTitle": "The Generic Title",
+  "classDescription": "A brief description of what this class is about.",
+  "themeColor": "skyblue",
+  "subclassChoiceLevel": 3,
+  "sections": [
+    {
+      "type": "intro",
+      "sectionId": "generic-intro",
+      "title": "Class Overview",
+      "content": [
+        "Introduction paragraph 1.",
+        "Introduction paragraph 2."
+      ]
+    },
+    {
+      "type": "rolePlaystyle",
+      "sectionId": "generic-role",
+      "title": "Role & Playstyle",
+      "content": [
+        "Description of typical role and playstyle."
+      ]
+    },
+    {
+      "type": "strengthsWeaknesses",
+      "sectionId": "generic-proscons",
+      "title": "Strengths & Weaknesses",
+      "strengths": [
+        "Strength 1",
+        "Strength 2"
+      ],
+      "weaknesses": [
+        "Weakness 1",
+        "Weakness 2"
+      ]
+    },
+    {
+      "type": "baseTraits",
+      "sectionId": "generic-core",
+      "title": "Core Class Traits",
+      "items": [
+        {
+          "name": "Hit Dice",
+          "description": "e.g., 1d8 per class level",
+          "level": 1
+        },
+        {
+          "name": "Primary Attributes",
+          "description": "e.g., Strength, Dexterity"
+        },
+        {
+          "name": "Saving Throws",
+          "description": "e.g., Dexterity, Intelligence"
+        },
+        {
+          "name": "Proficiencies",
+          "description": "Armor, weapons, tools, etc."
+        },
+        {
+          "name": "Skills",
+          "description": "Choose X from List Y, Z, A, B..."
+        }
+      ]
+    },
+    {
+      "type": "levelProgression",
+      "sectionId": "generic-levels",
+      "title": "Class Features by Level",
+      "levels": [
+        {
+          "level": 1,
+          "title": "Starting Features",
+          "features": [
+            {
+              "name": "Level 1 Feature A",
+              "description": "Description for Feature A.",
+              "isCritical": true
+            },
+            {
+              "name": "Level 1 Feature B",
+              "description": "Description for Feature B."
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "features": [
+            {
+              "name": "Level 2 Feature",
+              "description": "Description for Level 2 Feature."
+            }
+          ]
+        },
+        {
+          "level": 3,
+          "features": [
+            {
+              "name": "Subclass Feature Placeholder",
+              "description": "This feature is granted by the chosen subclass.",
+              "isSubclassFeature": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "uniqueMechanics",
+      "sectionId": "generic-mechanics",
+      "title": "Unique Class Mechanics",
+      "intro": "Optional introduction to unique mechanics.",
+      "mechanics": [
+        {
+          "name": "Mechanic 1",
+          "description": "Detailed explanation of Mechanic 1."
+        },
+        {
+          "name": "Mechanic 2",
+          "description": "Detailed explanation of Mechanic 2.",
+          "isCritical": true
+        }
+      ]
+    },
+    {
+      "type": "subclasses",
+      "sectionId": "generic-subclasses",
+      "title": "Subclass Options",
+      "intro": "Optional introduction to subclasses.",
+      "subclasses": [
+        {
+          "id": "generic-subclass-alpha",
+          "name": "Alpha Subclass",
+          "description": "Description of Alpha Subclass.",
+          "note": "Optional note about this subclass.",
+          "features": [
+            {
+              "name": "Alpha Feature 1",
+              "level": 3,
+              "description": "Description of Alpha Feature 1."
+            },
+            {
+              "name": "Alpha Feature 2",
+              "level": 6,
+              "description": "Description of Alpha Feature 2."
+            }
+          ]
+        },
+        {
+          "id": "generic-subclass-beta",
+          "name": "Beta Subclass",
+          "description": "Description of Beta Subclass.",
+          "features": [
+            {
+              "name": "Beta Feature 1",
+              "level": 3,
+              "description": "Description of Beta Feature 1."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "feats",
+      "sectionId": "generic-feats",
+      "title": "Recommended Feats",
+      "intro": "Optional intro for feats.",
+      "categories": [
+        {
+          "categoryName": "Core Feats",
+          "description": "Feats essential for this class.",
+          "feats": [
+            {
+              "name": "Feat Name 1",
+              "description": "Why this feat is good."
+            }
+          ]
+        },
+        {
+          "categoryName": "Situational Feats",
+          "feats": [
+            {
+              "name": "Feat Name 2",
+              "description": "When this feat might be useful."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "flavorAndRoleplaying",
+      "sectionId": "generic-rp",
+      "title": "Flavor & Roleplaying",
+      "content": [
+        "Roleplaying hook 1.",
+        "Flavor text 1."
+      ]
+    },
+    {
+      "type": "multiclassing",
+      "sectionId": "generic-multi",
+      "title": "Multiclassing",
+      "generalNotes": [
+        "General note about multiclassing with this class."
+      ],
+      "goodCombinations": [
+        {
+          "className": "OtherClass",
+          "synergy": "How these classes synergize.",
+          "levels": "e.g., ClassName X / OtherClass 1-3"
+        }
+      ]
+    },
+    {
+      "type": "equipmentProgression",
+      "sectionId": "generic-gear",
+      "title": "Equipment Progression",
+      "earlyGame": ["Early game item 1"],
+      "midGame": ["Mid game item 1"],
+      "lateGame": ["Late game item 1"]
+    },
+    {
+      "type": "closingRemarks",
+      "sectionId": "generic-closing",
+      "title": "Final Thoughts",
+      "content": ["Concluding remarks about the class."]
+    }
+  ],
+  "plannerConfig": {
+    "species": {
+      "name": "Recommended Species",
+      "note": "Why this species is good."
+    },
+    "origin": {
+      "name": "Recommended Origin",
+      "note": "Why this origin is good.",
+      "recommendedFeat": "Feat Name",
+      "skillProficiencies": ["Skill A", "Skill B"]
+    },
+    "abilityPriority": ["PrimaryStat", "SecondaryStat", "TertiaryStat"],
+    "keyClassSkills": ["Skill C", "Skill D"],
+    "generalLevelRecommendations": [
+      {
+        "level": 1,
+        "recommendation": {
+          "notes": "Notes for level 1 choices."
+        }
+      },
+      {
+        "level": 4,
+        "recommendation": {
+          "asiChoice": "+2 PrimaryStat or a key feat.",
+          "featSuggestion": "Key Feat Name"
+        }
+      }
+    ],
+    "subclassSpecificRecommendations": {
+      "Alpha Subclass": [
+        {
+          "level": 3,
+          "recommendation": {
+            "notes": "Notes for Alpha Subclass at level 3."
+          }
+        }
+      ],
+      "generic-subclass-beta": [
+         {
+          "level": 3,
+          "recommendation": {
+            "notes": "Notes for Beta Subclass at level 3, referenced by ID."
+          }
+        }
+      ]
+    }
+  }
+}
