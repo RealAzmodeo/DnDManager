@@ -1,0 +1,118 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "EffectDefinition",
+  "description": "Schema for a single mechanical effect, like a buff, debuff, or other character modification.",
+  "type": "object",
+  "properties": {
+    "id": {
+      "description": "Unique identifier for this effect definition.",
+      "type": "string",
+      "pattern": "^[a-z0-9-]+$"
+    },
+    "name": {
+      "description": "Display name for the effect.",
+      "type": "string"
+    },
+    "description": {
+      "description": "Detailed description of what this effect does.",
+      "type": "string"
+    },
+    "targetCategory": {
+      "description": "The broad category of what the effect targets.",
+      "type": "string",
+      "enum": [
+        "AbilityScore", "Skill", "SavingThrow", "AttackRoll", "DamageRoll",
+        "ArmorClass", "Speed", "Senses", "MaxHP", "CurrentHP", "ProficiencyBonus",
+        "MovementMode", "SpecificAction", "HitDiceMax", "HitDiceCurrent", "SpellSlots", "Resistance", "Immunity", "Vulnerability", "Condition"
+      ]
+    },
+    "targetSubcategory": {
+      "description": "The specific sub-target (e.g., 'Strength' for AbilityScore, 'Athletics' for Skill, 'Fire' for Resistance). Use 'All' or omit if not specific.",
+      "type": ["string", "null"]
+    },
+    "modificationType": {
+      "description": "How the target is modified.",
+      "type": "string",
+      "enum": [
+        "Bonus", "Penalty", "SetAbsolute", "SetMultiplier",
+        "Advantage", "Disadvantage", "GrantImmunity", "GrantResistance", "GrantVulnerability",
+        "GrantProficiency", "RemoveProficiency", "GrantAbility", "ModifyProperty", "AddElement", "RemoveElement"
+      ]
+    },
+    "value": {
+      "description": "The primary value of the modification (numeric for Bonus/Penalty/Set, string for types like 'Fire' for Immunity/Resistance).",
+      "type": ["number", "string", "boolean", "null"]
+    },
+    "valueDice": {
+      "description": "Array of DiceRollComponents if the value is dice-based.",
+      "type": ["array", "null"],
+      "items": {
+        "$ref": "DiceRollComponent.schema.json"
+      }
+    },
+    "valueScalar": {
+      "description": "For effects that scale with something (e.g., character level, ability score).",
+      "type": ["object", "null"],
+      "properties": {
+        "sourceStat": {"type": "string", "description": "e.g., CharacterLevel, Strength_Score, ProficiencyBonus"},
+        "multiplier": {"type": "number", "default": 1.0},
+        "divisor": {"type": "number", "default": 1.0},
+        "baseValue": {"type": "number", "default": 0},
+        "minResult": {"type": "number"},
+        "maxResult": {"type": "number"},
+        "rounding": {"type": "string", "enum": ["floor", "ceil", "round"], "default": "floor"}
+      },
+      "additionalProperties": false
+    },
+    "durationType": {
+      "description": "How long the effect lasts.",
+      "type": "string",
+      "enum": [
+        "Instantaneous", "Rounds", "Minutes", "Hours", "Days",
+        "Permanent", "SpecialCondition", "UntilSave", "Encounter", "ShortRest", "LongRest"
+      ]
+    },
+    "durationValue": {
+      "description": "Numeric value for the duration (e.g., number of rounds, minutes).",
+      "type": ["number", "null"]
+    },
+    "saveToResistAttribute": {
+      "description": "Ability score for saving throw to resist or end the effect (e.g., 'Wisdom').",
+      "type": ["string", "null"],
+      "enum": [null, "Strength", "Dexterity", "Constitution", "Intelligence", "Wisdom", "Charisma"]
+    },
+    "saveDCCalculation": {
+      "description": "How the Save DC is calculated (e.g., 'Fixed_15', 'CasterSpellDC_Intelligence').",
+      "type": ["string", "null"]
+    },
+    "isBuff": {
+      "description": "Is this effect generally considered a buff (positive) or debuff (negative)?",
+      "type": "boolean"
+    },
+    "applicationConditions": {
+      "description": "Conditions that must be met for the effect to apply.",
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "stackingRules": {
+      "description": "How this effect stacks with others.",
+      "type": "string",
+      "enum": ["StacksWithDifferentSources", "HighestApplies", "LowestApplies", "DoesNotStack", "Additive", "Cumulative"]
+    },
+    "notes": {
+      "description": "Optional notes or comments.",
+      "type": ["array", "null"],
+      "items": { "type": "string" }
+    }
+  },
+  "required": [
+    "id",
+    "name",
+    "description",
+    "targetCategory",
+    "modificationType",
+    "durationType",
+    "isBuff"
+  ],
+  "additionalProperties": false
+}

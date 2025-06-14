@@ -1,0 +1,51 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "DiceRollComponent",
+  "description": "Schema for a single component of a dice roll or a static modifier.",
+  "type": "object",
+  "properties": {
+    "diceCount": {
+      "description": "Number of dice to roll. Use 0 for static modifiers.",
+      "type": "integer",
+      "minimum": 0
+    },
+    "dieType": {
+      "description": "Type of die (e.g., 4, 6, 8, 10, 12, 20). Use 0 or 1 if diceCount is 0 (static modifier).",
+      "type": "integer",
+      "minimum": 0
+    },
+    "category": {
+      "description": "What the dice roll is for (e.g., Damage, Healing, Bonus, Penalty, HP).",
+      "type": "string",
+      "examples": ["Damage", "Healing", "Bonus", "Penalty", "HP", "AttributeCheck"]
+    },
+    "subType": {
+      "description": "The specific type within the category (e.g., for 'Damage' -> 'Slashing', 'Fire'; for 'Bonus' -> 'AttackRolls').",
+      "type": "string",
+      "examples": ["Slashing", "Fire", "Cold", "HitPoints", "AttackRolls", "SkillCheck_Athletics", "SavingThrow_Dexterity"]
+    },
+    "staticValue": {
+      "description": "The value if this is a static modifier. If diceCount > 0, this might be 0.",
+      "type": "integer"
+    },
+    "valueSource": {
+      "description": "Optional: If the value is derived from a character stat (e.g., 'Strength_Modifier', 'Proficiency_Bonus').",
+      "type": ["string", "null"]
+    },
+    "notes": {
+      "description": "Optional notes or comments about this dice roll component.",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "required": [
+    "diceCount",
+    "dieType",
+    "category",
+    "subType",
+    "staticValue"
+  ],
+  "additionalProperties": false
+}

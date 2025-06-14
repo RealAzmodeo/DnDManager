@@ -1,0 +1,72 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ConditionDefinition",
+  "description": "Schema for a status condition a character can be under.",
+  "type": "object",
+  "properties": {
+    "id": {
+      "description": "Unique identifier for this condition definition.",
+      "type": "string",
+      "pattern": "^[a-z0-9-]+$"
+    },
+    "name": {
+      "description": "Display name for the condition.",
+      "type": "string"
+    },
+    "description": {
+      "description": "A general description of the condition.",
+      "type": "string"
+    },
+    "appliedEffects": {
+      "description": "Mechanical effects this condition imposes. Each item is an EffectDefinition ID or an embedded EffectDefinition object.",
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "type": "string",
+            "description": "ID of a predefined EffectDefinition."
+          },
+          {
+            "$ref": "EffectDefinition.schema.json"
+          }
+        ]
+      }
+    },
+    "immunityGranting": {
+      "description": "Describes what other conditions or types of effects this condition might make the character immune to.",
+      "type": ["object", "null"],
+      "properties": {
+        "conditionIds": {
+          "type": "array",
+          "items": {"type": "string", "description": "ID of a ConditionDefinition."}
+        },
+        "effectCategories": {
+          "type": "array",
+          "items": {"type": "string", "description": "targetCategory from EffectDefinition or a specific effect ID."}
+        }
+      },
+      "additionalProperties": false
+    },
+    "removalTriggers": {
+      "description": "Specific events or actions that can remove this condition.",
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "source": {
+      "description": "Where this condition is typically defined (e.g., 'Core Rules').",
+      "type": ["string", "null"]
+    },
+    "notes": {
+      "description": "Optional notes or comments.",
+      "type": ["array", "null"],
+      "items": { "type": "string" }
+    }
+  },
+  "required": [
+    "id",
+    "name",
+    "description",
+    "appliedEffects"
+  ],
+  "additionalProperties": false
+}
