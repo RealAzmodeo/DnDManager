@@ -1,0 +1,19 @@
+{
+  "diceCount": 1,
+  "dieType": 6,
+  "category": "Damage",
+  "subType": "Fire",
+  "staticValue": 0,
+  "valueSource": null,
+  "notes": [
+    "This template represents a single component of a dice roll or a static modifier.",
+    "A complete dice expression (e.g., '2d8 Slashing + 1d6 Fire + 5') would be an array of these components.",
+    "Examples:",
+    "  For '1d8 Slashing': { 'diceCount': 1, 'dieType': 8, 'category': 'Damage', 'subType': 'Slashing', 'staticValue': 0, 'valueSource': null }",
+    "  For '+5 to Attack': { 'diceCount': 0, 'dieType': 0, 'category': 'Bonus', 'subType': 'AttackRolls', 'staticValue': 5, 'valueSource': null }",
+    "  For '1d4 Healing': { 'diceCount': 1, 'dieType': 4, 'category': 'Healing', 'subType': 'HitPoints', 'staticValue': 0, 'valueSource': null }",
+    "  For 'Charisma Modifier to Damage': { 'diceCount': 0, 'dieType': 0, 'category': 'Damage', 'subType': 'Force' /* or same as weapon */, 'staticValue': 0, 'valueSource': 'Charisma_Modifier' }",
+    "  'dieType' can be 0 or 1 if 'diceCount' is 0 (representing a static value).",
+    "  'valueSource' is optional and indicates if a value is derived from a character stat (e.g., 'Strength_Modifier', 'Proficiency_Bonus')."
+  ]
+}

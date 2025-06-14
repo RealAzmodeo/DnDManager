@@ -1,0 +1,33 @@
+{
+  "id": "generic-condition-id",
+  "name": "Generic Condition Name",
+  "description": "A general description of what it means to be affected by this condition and any sensory or roleplaying implications.",
+  "appliedEffects": [
+    {
+      "comment": "This would be an embedded EffectDefinition object or an ID referencing an EffectDefinition. See Templates/EffectDefinition.template.json for structure.",
+      "effectId_placeholder": "effect-disadvantage-on-attacks"
+    },
+    {
+      "effectId_placeholder": "effect-halve-movement-speed"
+    }
+  ],
+  "immunityGranting": {
+    "conditionIds": ["condition-frightened"],
+    "effectCategories": ["PerceptionChecks_SightBased"]
+  },
+  "removalTriggers": [
+    "ReceivesMagicalHealing_Any",
+    "SpecificSpell_LesserRestoration",
+    "TakesDamage_Fire"
+  ],
+  "source": "Core Rules",
+  "notes": [
+    "This template defines a status condition.",
+    "The 'appliedEffects' array is key: it lists the actual mechanical effects this condition imposes. Each item in the array should either be a complete EffectDefinition object or an ID that links to a predefined effect.",
+    "Example: The 'Blinded' condition might have an appliedEffect that targets 'AttackRolls' with modificationType 'Disadvantage', and another that targets 'Senses' subcategory 'SightRange' with modificationType 'SetAbsolute' and value 0.",
+    "'immunityGranting': (Optional) Describes what other conditions or types of effects this condition might make the character immune to.",
+    "  'conditionIds': Array of condition IDs this condition makes you immune to.",
+    "  'effectCategories': Array of effect targetCategories or specific effect IDs this condition makes you immune to.",
+    "'removalTriggers': (Optional) Lists specific events or actions that can remove this condition, beyond the natural duration of its applied effects."
+  ]
+}

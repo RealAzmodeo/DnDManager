@@ -1,0 +1,32 @@
+{
+  "id": "generic-effect-id",
+  "name": "Generic Effect Name",
+  "description": "Detailed description of what this effect does, its source, and any visual cues.",
+  "targetCategory": "AttackRoll",
+  "targetSubcategory": "All",
+  "modificationType": "Bonus",
+  "value": 2,
+  "valueDice": null,
+  "valueScalar": null,
+  "durationType": "Rounds",
+  "durationValue": 10,
+  "saveToResistAttribute": null,
+  "saveDCCalculation": null,
+  "isBuff": true,
+  "applicationConditions": [],
+  "stackingRules": "HighestApplies",
+  "notes": [
+    "This template defines a single mechanical effect, like a buff, debuff, or other modification.",
+    "targetCategory examples: 'AbilityScore', 'Skill', 'SavingThrow', 'AttackRoll', 'DamageRoll', 'ArmorClass', 'Speed', 'Senses', 'MaxHP', 'ProficiencyBonus', 'MovementMode', 'SpecificAction'.",
+    "targetSubcategory examples: For 'AbilityScore' -> 'Strength'; 'Skill' -> 'Athletics'; 'Senses' -> 'DarkvisionRange'; 'MovementMode' -> 'FlyingSpeed'; 'SpecificAction' -> 'DashActionUses'. Use 'All' if applicable to all under the category.",
+    "modificationType examples: 'Bonus' (adds value), 'Penalty' (subtracts value), 'SetAbsolute' (sets to value), 'SetMultiplier' (multiplies by value, e.g., 0.5 for half, 2 for double), 'Advantage', 'Disadvantage', 'GrantImmunity', 'GrantResistance', 'GrantVulnerability', 'GrantProficiency', 'RemoveProficiency', 'GrantAbility', 'ModifyProperty'.",
+    "value: Numeric for Bonus/Penalty/Set. String for types like 'Fire' for Immunity/Resistance/Vulnerability. Boolean for Advantage/Disadvantage (true).",
+    "valueDice: If the modification's value is dice-based (e.g., '1d4 bonus'), this would be an array of DiceRollComponent objects, e.g., [{ 'diceCount': 1, 'dieType': 4, 'category': 'Bonus', 'subType': 'ArmorClass', 'staticValue': 0 }]. If so, 'value' might be 0 or null.",
+    "valueScalar: (Optional) For effects that scale with something, e.g., { 'sourceStat': 'CasterLevel', 'multiplier': 0.5, 'rounding': 'floor' }. Used if value isn't fixed or simple dice.",
+    "durationType examples: 'Instantaneous', 'Rounds', 'Minutes', 'Hours', 'Days', 'Permanent', 'SpecialCondition' (e.g., 'UntilLongRest', 'WhileConcentrating'), 'UntilSave'.",
+    "saveToResistAttribute: e.g., 'Wisdom'. Used if 'durationType' is 'UntilSave'.",
+    "saveDCCalculation: e.g., 'Fixed_15', 'CasterSpellDC_Intelligence', 'SourceItemDC_8_Prof_Modifier'.",
+    "applicationConditions: Array of condition strings or objects that must be met for the effect to apply (e.g., ['TargetIsBelowHalfHP', { 'type': 'HasCondition', 'conditionId': 'prone' }]).",
+    "stackingRules: e.g., 'StacksWithDifferentSources', 'HighestApplies', 'LowestApplies', 'DoesNotStack', 'Additive'."
+  ]
+}
